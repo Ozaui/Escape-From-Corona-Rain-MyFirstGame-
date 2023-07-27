@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public float playerSpeed = 10;
     private Rigidbody2D rb;
-    private Vector2 playerDirection;
+    private float move = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +16,19 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float directionY = Input.GetAxisRaw("Vertical");
-        playerDirection = new Vector2 (0, directionY).normalized;
+        rb.velocity = new Vector2(rb.velocity.x, move * playerSpeed * Time.deltaTime);
     }
-    private void FixedUpdate()
+    
+    public void Up()
     {
-        rb.velocity = new Vector2(0, playerDirection.y * playerSpeed);
+        move = +1000;
+    }
+    public void Down()
+    {
+        move = -1000;
+    }
+    public void Stop()
+    {
+        move = 0;
     }
 }

@@ -21,11 +21,11 @@ public class PlayerScript : MonoBehaviour
     
     public void Up()
     {
-        move = +1000;
+        move = +100;
     }
     public void Down()
     {
-        move = -1000;
+        move = -100;
     }
     public void Stop()
     {

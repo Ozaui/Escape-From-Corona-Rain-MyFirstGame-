@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundLoopScipts : MonoBehaviour
+public class BackgroundMusic : MonoBehaviour
 {
     public float backgroundSpeed;
     public Renderer backgroundRenderer;
